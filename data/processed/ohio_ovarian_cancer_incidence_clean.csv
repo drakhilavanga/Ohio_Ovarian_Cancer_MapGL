@@ -1,0 +1,89 @@
+county_raw,incidence_rate_raw,average_annual_cases_raw,incidence_lower_ci_raw,incidence_upper_ci_raw,county,incidence_rate,average_annual_cases,incidence_lower_ci,incidence_upper_ci,incidence_suppressed,cancer_site,stage,period,sex
+Adams County(2),*,3 or fewer,*,*,Adams,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Allen County(2),11,7,7.4,15.8,Allen,11,7,7.4,15.8,FALSE,Ovary,All stages,2018–2022,Female
+Ashland County(2),12.8,4,7.7,20.2,Ashland,12.8,4,7.7,20.2,FALSE,Ovary,All stages,2018–2022,Female
+Ashtabula County(2),12,8,8.3,17,Ashtabula,12,8,8.3,17,FALSE,Ovary,All stages,2018–2022,Female
+Athens County(2),11.1,4,6.3,18.1,Athens,11.1,4,6.3,18.1,FALSE,Ovary,All stages,2018–2022,Female
+Auglaize County(2),*,3 or fewer,*,*,Auglaize,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Belmont County(2),12.1,5,7.6,18.6,Belmont,12.1,5,7.6,18.6,FALSE,Ovary,All stages,2018–2022,Female
+Brown County(2),*,3 or fewer,*,*,Brown,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Butler County(2),10.2,24,8.3,12.3,Butler,10.2,24,8.3,12.3,FALSE,Ovary,All stages,2018–2022,Female
+Carroll County(2),*,3 or fewer,*,*,Carroll,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Champaign County(2),*,3 or fewer,*,*,Champaign,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Clark County(2),7.8,8,5.5,10.8,Clark,7.8,8,5.5,10.8,FALSE,Ovary,All stages,2018–2022,Female
+Clermont County(2),12.4,17,9.8,15.6,Clermont,12.4,17,9.8,15.6,FALSE,Ovary,All stages,2018–2022,Female
+Clinton County(2),*,3 or fewer,*,*,Clinton,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Columbiana County(2),14.2,10,10.3,19.2,Columbiana,14.2,10,10.3,19.2,FALSE,Ovary,All stages,2018–2022,Female
+Coshocton County(2),13.6,4,7.9,22.4,Coshocton,13.6,4,7.9,22.4,FALSE,Ovary,All stages,2018–2022,Female
+Crawford County(2),*,3 or fewer,*,*,Crawford,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Cuyahoga County(2),10.1,86,9.1,11.1,Cuyahoga,10.1,86,9.1,11.1,FALSE,Ovary,All stages,2018–2022,Female
+Darke County(2),*,3 or fewer,*,*,Darke,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Defiance County(2),13.9,3,7.7,23.2,Defiance,13.9,3,7.7,23.2,FALSE,Ovary,All stages,2018–2022,Female
+Delaware County(2),9,11,6.8,11.8,Delaware,9,11,6.8,11.8,FALSE,Ovary,All stages,2018–2022,Female
+Erie County(2),7.5,4,4.2,12.4,Erie,7.5,4,4.2,12.4,FALSE,Ovary,All stages,2018–2022,Female
+Fairfield County(2),10.1,9,7.4,13.7,Fairfield,10.1,9,7.4,13.7,FALSE,Ovary,All stages,2018–2022,Female
+Fayette County(2),*,3 or fewer,*,*,Fayette,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Franklin County(2),8.5,60,7.5,9.5,Franklin,8.5,60,7.5,9.5,FALSE,Ovary,All stages,2018–2022,Female
+Fulton County(2),12.9,3,7.3,21.4,Fulton,12.9,3,7.3,21.4,FALSE,Ovary,All stages,2018–2022,Female
+Gallia County(2),*,3 or fewer,*,*,Gallia,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Geauga County(2),12.2,8,8.4,17.1,Geauga,12.2,8,8.4,17.1,FALSE,Ovary,All stages,2018–2022,Female
+Greene County(2),8.8,9,6.3,11.9,Greene,8.8,9,6.3,11.9,FALSE,Ovary,All stages,2018–2022,Female
+Guernsey County(2),*,3 or fewer,*,*,Guernsey,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Hamilton County(2),11.3,58,10,12.7,Hamilton,11.3,58,10,12.7,FALSE,Ovary,All stages,2018–2022,Female
+Hancock County(2),7.2,4,4.2,11.7,Hancock,7.2,4,4.2,11.7,FALSE,Ovary,All stages,2018–2022,Female
+Hardin County(2),*,3 or fewer,*,*,Hardin,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Harrison County(2),*,3 or fewer,*,*,Harrison,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Henry County(2),*,3 or fewer,*,*,Henry,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Highland County(2),*,3 or fewer,*,*,Highland,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Hocking County(2),*,3 or fewer,*,*,Hocking,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Holmes County(2),*,3 or fewer,*,*,Holmes,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Huron County(2),10,4,5.9,16.1,Huron,10,4,5.9,16.1,FALSE,Ovary,All stages,2018–2022,Female
+Jackson County(2),*,3 or fewer,*,*,Jackson,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Jefferson County(2),9.7,5,5.8,15.4,Jefferson,9.7,5,5.8,15.4,FALSE,Ovary,All stages,2018–2022,Female
+Knox County(2),9.3,3,5.1,15.4,Knox,9.3,3,5.1,15.4,FALSE,Ovary,All stages,2018–2022,Female
+Lake County(2),10.8,18,8.5,13.5,Lake,10.8,18,8.5,13.5,FALSE,Ovary,All stages,2018–2022,Female
+Lawrence County(2),10.4,4,6.2,16.6,Lawrence,10.4,4,6.2,16.6,FALSE,Ovary,All stages,2018–2022,Female
+Licking County(2),10.4,11,7.7,13.7,Licking,10.4,11,7.7,13.7,FALSE,Ovary,All stages,2018–2022,Female
+Logan County(2),*,3 or fewer,*,*,Logan,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Lorain County(2),10.3,22,8.4,12.6,Lorain,10.3,22,8.4,12.6,FALSE,Ovary,All stages,2018–2022,Female
+Lucas County(2),8.5,23,6.9,10.3,Lucas,8.5,23,6.9,10.3,FALSE,Ovary,All stages,2018–2022,Female
+Madison County(2),*,3 or fewer,*,*,Madison,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Mahoning County(2),10.9,19,8.6,13.6,Mahoning,10.9,19,8.6,13.6,FALSE,Ovary,All stages,2018–2022,Female
+Marion County(2),10.8,4,6.6,17,Marion,10.8,4,6.6,17,FALSE,Ovary,All stages,2018–2022,Female
+Medina County(2),11.1,13,8.4,14.4,Medina,11.1,13,8.4,14.4,FALSE,Ovary,All stages,2018–2022,Female
+Meigs County(2),*,3 or fewer,*,*,Meigs,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Mercer County(2),*,3 or fewer,*,*,Mercer,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Miami County(2),13.9,9,10,18.9,Miami,13.9,9,10,18.9,FALSE,Ovary,All stages,2018–2022,Female
+Monroe County(2),*,3 or fewer,*,*,Monroe,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Montgomery County(2),9.3,32,7.9,11,Montgomery,9.3,32,7.9,11,FALSE,Ovary,All stages,2018–2022,Female
+Morgan County(2),*,3 or fewer,*,*,Morgan,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Morrow County(2),*,3 or fewer,*,*,Morrow,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Muskingum County(2),11.9,7,8.2,16.8,Muskingum,11.9,7,8.2,16.8,FALSE,Ovary,All stages,2018–2022,Female
+Noble County(2),*,3 or fewer,*,*,Noble,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Ottawa County(2),*,3 or fewer,*,*,Ottawa,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Paulding County(2),*,3 or fewer,*,*,Paulding,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Perry County(2),*,3 or fewer,*,*,Perry,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Pickaway County(2),*,3 or fewer,*,*,Pickaway,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Pike County(2),*,3 or fewer,*,*,Pike,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Portage County(2),7.6,8,5.3,10.6,Portage,7.6,8,5.3,10.6,FALSE,Ovary,All stages,2018–2022,Female
+Preble County(2),10.5,3,6,17.8,Preble,10.5,3,6,17.8,FALSE,Ovary,All stages,2018–2022,Female
+Putnam County(2),*,3 or fewer,*,*,Putnam,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Richland County(2),9.1,8,6.2,12.9,Richland,9.1,8,6.2,12.9,FALSE,Ovary,All stages,2018–2022,Female
+Ross County(2),11.4,5,7.2,17.3,Ross,11.4,5,7.2,17.3,FALSE,Ovary,All stages,2018–2022,Female
+Sandusky County(2),*,3 or fewer,*,*,Sandusky,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Scioto County(2),13.5,6,9,19.5,Scioto,13.5,6,9,19.5,FALSE,Ovary,All stages,2018–2022,Female
+Seneca County(2),*,3 or fewer,*,*,Seneca,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Shelby County(2),*,3 or fewer,*,*,Shelby,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Stark County(2),12.1,33,10.2,14.3,Stark,12.1,33,10.2,14.3,FALSE,Ovary,All stages,2018–2022,Female
+Summit County(2),9,32,7.6,10.6,Summit,9,32,7.6,10.6,FALSE,Ovary,All stages,2018–2022,Female
+Trumbull County(2),9.2,14,7,11.9,Trumbull,9.2,14,7,11.9,FALSE,Ovary,All stages,2018–2022,Female
+Tuscarawas County(2),8.9,5,5.7,13.4,Tuscarawas,8.9,5,5.7,13.4,FALSE,Ovary,All stages,2018–2022,Female
+Union County(2),10.6,4,6.3,16.8,Union,10.6,4,6.3,16.8,FALSE,Ovary,All stages,2018–2022,Female
+Van Wert County(2),*,3 or fewer,*,*,Van Wert,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Vinton County(2),*,3 or fewer,*,*,Vinton,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Warren County(2),11.1,16,8.7,13.9,Warren,11.1,16,8.7,13.9,FALSE,Ovary,All stages,2018–2022,Female
+Washington County(2),11.7,5,7.4,17.9,Washington,11.7,5,7.4,17.9,FALSE,Ovary,All stages,2018–2022,Female
+Wayne County(2),8.7,7,5.9,12.5,Wayne,8.7,7,5.9,12.5,FALSE,Ovary,All stages,2018–2022,Female
+Williams County(2),*,3 or fewer,*,*,Williams,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
+Wood County(2),9.8,7,6.8,13.7,Wood,9.8,7,6.8,13.7,FALSE,Ovary,All stages,2018–2022,Female
+Wyandot County(2),*,3 or fewer,*,*,Wyandot,NA,3,NA,NA,TRUE,Ovary,All stages,2018–2022,Female
