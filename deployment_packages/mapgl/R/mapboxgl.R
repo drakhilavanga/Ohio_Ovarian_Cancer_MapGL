@@ -1,0 +1,175 @@
+#' Initialize a Mapbox GL Map
+#'
+#' @param style The Mapbox style to use.
+#' @param center A numeric vector of length 2 specifying the initial center of the map.
+#' @param zoom The initial zoom level of the map.
+#' @param bearing The initial bearing (rotation) of the map, in degrees.
+#' @param pitch The initial pitch (tilt) of the map, in degrees.
+#' @param projection The map projection to use (e.g., "mercator", "globe").
+#' @param parallels A vector of two numbers representing the standard parallels of the projection.  Only available when the projection is "albers" or "lambertConformalConic".
+#' @param access_token Your Mapbox access token.
+#' @param bounds The bounding box to fit the map to. Accepts one of the following:
+#' * `sf` object;
+#' * output of `st_bbox()`;
+#' * unnamed numeric vector of the form `c(xmin, ymin, xmax, ymax)`.
+#' @param width The width of the output htmlwidget.
+#' @param height The height of the output htmlwidget.
+#' @param ... Additional named parameters to be passed to the Mapbox GL JS Map.
+#'   See the Mapbox GL JS documentation for a full list of options:
+#'   \url{https://docs.mapbox.com/mapbox-gl-js/api/map/#map-parameters}.
+#'   Common options include:
+#'   * `minZoom` / `maxZoom`: Minimum and maximum zoom levels (0-24).
+#'   * `maxBounds`: Restrict panning to a bounding box, specified as
+#'     `list(c(sw_lng, sw_lat), c(ne_lng, ne_lat))`.
+#'   * `dragRotate`: If `FALSE`, disables rotation via mouse drag (default `TRUE`).
+#'   * `touchZoomRotate`: If `FALSE`, disables pinch-to-rotate on touch (default `TRUE`).
+#'   * `scrollZoom`: If `FALSE`, disables scroll wheel zoom (default `TRUE`).
+#'
+#' @return An HTML widget for a Mapbox GL map.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Basic map
+#' mapboxgl(projection = "globe")
+#'
+#' # Constrained map with zoom limits and disabled rotation
+#' mapboxgl(
+#'   bounds = my_sf_object,
+#'   minZoom = 5,
+#'   maxZoom = 12,
+#'   dragRotate = FALSE,
+#'   touchZoomRotate = FALSE
+#' )
+#' }
+mapboxgl <- function(
+    style = NULL,
+    center = c(0, 0),
+    zoom = 0,
+    bearing = 0,
+    pitch = 0,
+    projection = "globe",
+    parallels = NULL,
+    access_token = NULL,
+    bounds = NULL,
+    width = "100%",
+    height = NULL,
+    ...
+) {
+    if (is.null(access_token)) {
+        if (Sys.getenv("MAPBOX_PUBLIC_TOKEN") == "") {
+            rlang::abort(c(
+                "A Mapbox access token is required. Get one from your account at https://www.mapbox.com, and do one of the following:",
+                i = "Run `usethis::edit_r_environ()` and add the line MAPBOX_PUBLIC_TOKEN='your_token_goes_here';",
+                i = "Install the mapboxapi R package and run `mb_access_token('your_token_goes_here', install = TRUE)`",
+                i = "Alternatively, supply your token to the `access_token` parameter in this function or run `Sys.setenv(MAPBOX_PUBLIC_TOKEN='your_token_goes_here') for this session."
+            ))
+        } else {
+            access_token <- Sys.getenv("MAPBOX_PUBLIC_TOKEN")
+        }
+    }
+
+    additional_params <- list(...)
+    style_images <- mapgl_style_images(style)
+    style <- mapgl_drop_style_images(style)
+
+    if (!is.null(bounds)) {
+        if (inherits(bounds, "sfc")) {
+            bounds <- sf::st_as_sf(bounds)
+        }
+        if (inherits(bounds, "sf")) {
+            bounds <- as.vector(sf::st_bbox(sf::st_transform(bounds, 4326)))
+        } else if (inherits(bounds, "bbox")) {
+            # Curiously, anyNA(bounds) or any(is.na(bounds)) would return FALSE even
+            # if one of the four values is NA.
+            missings <- vapply(bounds, is.na, logical(1))
+            if (any(missings)) {
+                stop("`bounds` shouldn't contain missing values.")
+            }
+            # Transform to EPSG:4326 if not already
+            crs <- attr(bounds, "crs")
+            if (!is.null(crs) && !sf::st_is_longlat(crs)) {
+                bbox_sfc <- sf::st_as_sfc(bounds)
+                bounds <- as.vector(sf::st_bbox(sf::st_transform(bbox_sfc, 4326)))
+            } else {
+                bounds <- as.vector(bounds)
+            }
+        }
+        additional_params$bounds <- bounds
+    }
+
+    control_css <- htmltools::htmlDependency(
+        name = "layers-control",
+        version = "1.0.0",
+        src = c(file = system.file("htmlwidgets/styles", package = "mapgl")),
+        stylesheet = "layers-control.css"
+    )
+
+    x <- list(
+        style = style,
+        center = center,
+        zoom = zoom,
+        bearing = bearing,
+        pitch = pitch,
+        projection = projection,
+        parallels = parallels,
+        access_token = access_token,
+        additional_params = additional_params
+    )
+
+    if (length(style_images) > 0) {
+        x$images <- style_images
+    }
+
+    htmlwidgets::createWidget(
+        name = "mapboxgl",
+        x = x,
+        width = width,
+        height = height,
+        package = "mapgl",
+        dependencies = list(control_css),
+        sizingPolicy = htmlwidgets::sizingPolicy(
+            viewer.suppress = FALSE,
+            browser.fill = TRUE,
+            viewer.fill = TRUE,
+            knitr.figure = TRUE,
+            padding = 0,
+            knitr.defaultHeight = "500px",
+            viewer.defaultHeight = "100vh",
+            browser.defaultHeight = "100vh"
+        )
+    )
+}
+
+#' Create a Mapbox GL output element for Shiny
+#'
+#' @param outputId The output variable to read from
+#' @param width The width of the element
+#' @param height The height of the element
+#'
+#' @return A Mapbox GL output element for use in a Shiny UI
+#' @export
+mapboxglOutput <- function(outputId, width = "100%", height = "400px") {
+    htmlwidgets::shinyWidgetOutput(
+        outputId,
+        "mapboxgl",
+        width,
+        height,
+        package = "mapgl"
+    )
+}
+
+#' Render a Mapbox GL output element in Shiny
+#'
+#' @param expr An expression that generates a Mapbox GL map
+#' @param env The environment in which to evaluate `expr`
+#' @param quoted Is `expr` a quoted expression
+#'
+#' @return A rendered Mapbox GL map for use in a Shiny server
+#' @export
+renderMapboxgl <- function(expr, env = parent.frame(), quoted = FALSE) {
+    if (!quoted) {
+        expr <- substitute(expr)
+    } # force quoted
+    htmlwidgets::shinyRenderWidget(expr, mapboxglOutput, env, quoted = TRUE)
+}
