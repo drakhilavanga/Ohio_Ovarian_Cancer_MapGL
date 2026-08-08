@@ -1,0 +1,267 @@
+# mapgl 0.5.0
+
+* Tooltips and popups now accept `{brace}` templates package-wide. Any layer's `tooltip`/`popup` (and `set_tooltip()`/`set_popup()`) can take a glue-style template such as `"{name}: {population}"`, in addition to the existing column name and `concat()`/`number_format()` expression forms; substituted values are HTML-escaped.
+
+* New `tooltip_style()` / `popup_style()` helpers theme tooltips and popups without hand-written HTML/CSS, mirroring `legend_style()`. Pass a preset (`"light"`/`"dark"`) or custom appearance (background, border, radius, font, padding, shadow) to the new `tooltip_style`/`popup_style` argument on layer functions (and `set_tooltip()`/`set_popup()`). Tooltips are unstyled by default, so existing maps are unchanged.
+
+* New `add_flowmap()` draws animated origin-destination flow maps powered by Flowmap.gl (deck.gl). It supports temporal flows, location clustering, customizable color schemes (`flowmap_color_schemes()`), CSS blend modes, and themeable tooltips and popups (per-object-type content via `list(location = , flow = )`, styled with `tooltip_style()`/`popup_style()`). Flow filters and settings can be updated reactively in Shiny with `set_flowmap_filter()` and `set_flowmap_settings()`, and a `"window"`-mode `add_slider_control()` can drive a flowmap's temporal range. The heavy flow-mapping libraries load on demand, so maps without a flowmap are unaffected. Adapted from Egor Kotov's contribution in #205, with the bundled `bixi_locations` and `bixi_flows` datasets as a ready-to-use example.
+
+* New `add_slider_control()` adds an interactive slider that filters and/or animates one or more layers by a numeric feature property. It composes with a layer's initial `filter`, later `set_filter()` calls, and interactive legends (intersecting via `["all", ...]`) rather than replacing them. Modes are `"sequential"` (one value), `"cumulative"` (everything through a value), and `"window"` (a selected range that can also drive flowmap time ranges; `window_behavior` chooses a `"resizable"` two-edge range or a `"fixed"`-width band you pan). Two presentations: the default `"compact"` slider, or `presentation = "timeline"` — a prominent, brushable histogram (drag the selected window across the bars, drag its edges to resize) modeled on Egor Kotov's FlowMapBlue time control (#205). Supports paint-property animation, an optional play button, and an optional density histogram (`histogram`/`histogram_data`/`counts`, drawn with d3 loaded on demand). New `slider_style()` presets and overrides control the container, play button, track, thumb, and histogram appearance, and `draggable = TRUE` lets the user reposition the panel anywhere on the map (as with `add_legend()`). Companions `update_slider_control()` (for Shiny proxies) and `as_time_property()` (coerce `Date`/`POSIXct` to a numeric filter property) round out the feature.
+
+* `add_categorical_legend()` and `add_legend()` gain a `patch_spacing` argument (`"uniform"`/`"proportional"`). With `"proportional"`, each legend row's height tracks its own symbol size, giving proportional vertical spacing for graduated-symbol legends; the default `"uniform"` preserves existing behavior (#206, thanks to @mtennekes).
+* 
+* New `add_h3t_source()` adds a tiled H3 (h3t) source for MapLibre maps, fetching only the H3 cells in the current viewport from a `{z}/{x}/{y}` tile endpoint via the `h3tiles://` protocol — a scalable alternative to `add_h3j_source()` for large datasets. Works with multiple sources per map and on both sides of `compare()`. Bundled `h3j-h3t` library updated to 0.9.7 (#199, thanks to @bbest).
+
+* Update MapLibre GL JS to v5.24.0 and Mapbox GL JS to v3.24.0.
+
+* Fixed `add_legend()` silently ignoring the `target` argument for MapLibre compare widgets: the compare dispatch checked for class `"maplibre_compare"` while the widget class is `"maplibregl_compare"`, so legends were attached as regular map legends instead of compare-level legends.
+
+* `compare()` now supports synchronizing more than two maps (#204). Pass additional maps after `map1` and `map2` with `mode = "sync"`, and control the grid layout with the new `ncol` argument. In Shiny, maps in multi-map widgets are addressed as `"map1"` through `"mapN"` via `map_side` in the compare proxy functions (integers also accepted, e.g. `map_side = 3`), and emit input values like `input$id_map3_view`. Legends can be targeted at individual grid maps with `target = "map3"`.
+
+* New bivariate mapping support with `bivariate_scale()`, `bivariate_palettes()`, and `add_bivariate_legend()`. Bivariate scales use 3-by-3 palettes, support custom 3-by-3 color matrices, optional `x_breaks` and `y_breaks` for stable bins, and explicit `na_color` handling (#181).
+
+* Continuous legends can now expose an opt-in color-ramp picker. Use `color_ramps`, `selected_ramp`, and `ramp_picker = TRUE` with continuous legends to let readers switch palettes directly from the legend; named ramps display labels by default, and `ramp_labels = FALSE` creates a compact picker.
+
+* `interpolate_palette()` now carries additional scale metadata for downstream legends, including the source column, missing-value color, available color ramps, and selected ramp.
+
+* Compare maps now initialize legend interactivity assets so supported dynamic legend features can be used in compare views.
+
+* GitHub source archives are now slimmed with `.gitattributes export-ignore` rules for generated site and vignette assets. This preserves GitHub Pages content in the repository while avoiding large downloads during GitHub-based package installs.
+
+# mapgl 0.4.6
+
+* New `save_map()` function renders a map widget to a static PNG file using headless Chrome via the chromote package. Supports options for hiding controls, including/excluding legends and scale bars, replacing the basemap with a solid color, and retina-quality output with `image_scale`. New `print_map()` function provides the same capability for use in Quarto and R Markdown documents.
+
+* Update MapLibre GL JS to v5.22.0 and Mapbox GL JS to v3.21.0.
+
+* Mapbox GL JS v3.21.0 adds native PMTiles support via the TileProvider API. `add_pmtiles_source()` now uses the native vector tile path for Mapbox, removing the need for the custom PMTiles source implementation for vector tiles.
+
+* Support for color tables and categorical rasters in `add_image_source()` (#21).
+
+* New layer properties: `circle_emissive_strength`, `circle_pitch_alignment`, `circle_pitch_scale`, `fill_pattern_cross_fade`, `line_elevation_reference`, `line_elevation_ground_scale`, `line_pattern_cross_fade`, `fill_extrusion_emissive_strength`, `fill_extrusion_ambient_occlusion_intensity`, `fill_extrusion_ambient_occlusion_radius`, `fill_extrusion_cast_shadows`, `fill_extrusion_cutoff_fade_range`, `fill_extrusion_vertical_gradient`, `raster_color`, `raster_color_mix`, `raster_color_range`, `raster_emissive_strength`, `icon_occlusion_opacity`, `text_occlusion_opacity`.
+
+* `sfc` geometry vectors are now accepted wherever `sf` objects are accepted, including layer functions, quickview functions, and the `bounds` parameter (#177).
+
+* Various bug fixes and performance improvements (see GitHub issues for full list).
+
+# mapgl 0.4.5
+
+* **Esri styles support**: New `esri_style()` function provides access to Esri basemap styles for use with MapLibre maps, with support for ArcGIS API key authentication.
+
+* **MLT format support**: Updated PMTiles implementation to support the MapLibre Tiles (MLT) format.
+
+* Update Mapbox GL JS to v3.19.1 and MapLibre GL JS to v5.19.0.
+
+* **Bug fixes and improvements**:
+  - Fixed interactive legend edge case where max value could disappear when adjusting the low-end slider (#167)
+  - Fixed control stacking issue when reactives are used in map initialization functions
+  - Improved `add_reset_control()` button to match the visual style of other navigation controls (#168)
+  - Fixed trailing slash in Mapbox GL JS CDN URLs that could cause 404 errors on library load (#176)
+  - Geocoder control now properly hidden when using screenshot control (#169)
+  - Fixed `set_source()` not working with `maplibre_compare_proxy()` and `mapboxgl_compare_proxy()` (#171)
+  - Documentation updates (#175)
+
+# mapgl 0.4.4
+
+* Update Mapbox GL JS to v3.17.0 and MapLibre GL JS to v5.15.0.
+
+* **Interactive legends**: New opt-in interactivity for map legends enables direct data filtering from the legend:
+  - Categorical legends: Click legend items to toggle category visibility on the map. Disabled categories are visually indicated with reduced opacity and strikethrough text.
+  - Continuous legends: Drag dual handles on the gradient bar to filter data within a selected range. Ghost overlays indicate excluded regions, and the middle section can be dragged to pan the selection window.
+  - New parameters `interactive = TRUE`, `filter_column`, `filter_values`, and `classification` in legend functions
+  - Smart number formatting with K/M notation for large values in legend labels
+  - New `interactive_legend` parameter in `maplibre_view()` and `mapboxgl_view()` for quick interactive visualizations
+  - Full Shiny integration with filter state available via input values
+  - Works with GeoJSON, vector tiles, and PMTiles sources
+
+* **Draggable legends**: New `draggable = TRUE` parameter allows users to drag legends to any position on the map. Supports both mouse and touch interactions.
+
+* **Screenshot control**: New `add_screenshot_control()` function allows users to capture and download map screenshots as PNG images. Includes `image_scale` parameter for controlling output resolution.
+
+* **Globe projection for compare views**: Compare maps in MapLibre now properly respect globe projection when specified.
+
+* **Bug fixes and improvements**:
+  - Fixed floating-point precision issue in interactive legend filters that could exclude edge values
+  - Fixed continuous legend error when values are pre-formatted character strings (e.g., from `get_legend_labels()`)
+  - Fixed draw control source handling for better feature management (#164)
+  - Fixed `step_expr()` to properly handle quoted column names (#148)
+  - Fixed layer visibility state synchronization on style changes (#159)
+  - Images added via `add_image()` now persist across `set_style()` calls
+  - Measurement display box properly removed when draw control is cleared
+  - Added warning when fill extrusion layers are used with MapLibre globe projection (unsupported)
+  - Improved categorical color palette usage in quickview functions
+
+# mapgl 0.4.3
+
+* Update Mapbox GL JS, MapLibre GL JS, and Turf.js versions.
+* The `bounds` argument in `maplibre()` and `mapboxgl()` now accepts `sf::st_bbox()` output with automatic CRS transformation to EPSG:4326.
+* Fixed control duplication when `set_style()` is called in Shiny applications.
+* Fixed `clear_controls()` not properly removing controls.
+* Added `projection` argument to `maplibre()` for consistency with `mapboxgl()`.
+* Fixed tooltip/popup z-index conflicts.
+* Fixed tooltips with `number_format()` in comparison maps.
+* New `palette_to_lut()` function for creating custom color lookup tables in Mapbox styles.
+* Improved draw control proxy functionality and element ordering.
+* `maplibre()` and `maplibre_view()` now defaults to the globe projection.
+* Added support for raster PMTiles.
+* Factor columns now handled correctly in quickview functions.
+
+# mapgl 0.4.1
+
+* **Enhanced draw control with new drawing modes and live measurements**:
+  - Added rectangle drawing mode: Draw rectangles by clicking two corner points
+  - Added radius/circle drawing mode: Draw circles from center point to edge
+  - New live measurement preview system showing real-time distance, area, and perimeter calculations while drawing
+  - Support for metric, imperial, or both unit systems in measurements with `measurement_units` parameter
+  - Measurements appear during drawing, editing, and when selecting existing features
+
+* **Advanced layers control enhancements**:
+  - New grouped layers control: Organize layers into logical groups with collapsible sections
+  - Custom layer labels for improved layer identification and user experience
+  - Enhanced visual styling and interaction design for better usability
+
+* **New map style support**:
+  - Added `openfreemap_style()` function providing free, open-source map styles without API key requirements
+
+* **General improvements**:
+  - Updated to latest Mapbox GL JS and MapLibre GL JS versions for better performance and compatibility
+  - Fixed MapLibre compare view functionality issues
+  - Improved stability across MapLibre-specific features
+
+* **Selective control functionality**: Enhanced control over which map controls are displayed and when, providing more granular customization options
+
+* **Bug fixes and stability improvements**:
+  - Fixed issues with layer management and control interactions
+  - Improved `move_layer()` functionality outside of Shiny applications
+  - Various compatibility and performance enhancements
+
+# mapgl 0.4.0
+
+* **Client-side geospatial analysis with turf.js**: Added comprehensive support for turf.js v7.2.0, enabling powerful spatial operations directly in the browser without server round-trips:
+  - Geometric operations: `turf_buffer()`, `turf_union()`, `turf_intersect()`, `turf_difference()`
+  - Spatial filtering: `turf_filter()` with predicates (intersects, within, contains, crosses, disjoint)
+  - Point analysis: `turf_convex_hull()`, `turf_concave_hull()`, `turf_voronoi()`, `turf_centroid()`, `turf_center_of_mass()`
+  - Measurement functions: `turf_distance()` and `turf_area()` (Shiny-only)
+  - All functions support flexible inputs: existing map layers/sources or sf objects
+  - Full integration with Shiny proxy objects for real-time spatial analysis in web applications
+
+# mapgl 0.3.2
+
+* Added download functionality to draw control with new `download_button` and `download_filename` parameters in `add_draw_control()`. Users can now export drawn features as GeoJSON files directly from the draw control interface.
+* Enhanced geocoder control with MapTiler support for MapLibre maps. New `provider` parameter allows choosing between "osm" (OpenStreetMap/Nominatim) and "maptiler" providers, with `maptiler_api_key` parameter for MapTiler authentication.
+
+# mapgl 0.3.1
+
+* Added PMTiles support for Mapbox maps and streamlined PMTiles integration with `add_pmtiles_source()` function.
+* New functions `query_rendered_features()` and `get_queried_features()` allow users to directly invoke the `map.queryRenderedFeatures()` method from the parent libraries in Shiny apps, with guidance for users to avoid race conditions and ensure proper synchronization.  Functions query visible features in the map's viewport and which can be extracted as sf objects.
+* `mapboxgl_view()` and `maplibre_view()` now support quick view of terra rasters.  A new function, `add_view()`, is designed to help users quickly stack layers on top of the core view functions.
+
+# mapgl 0.3
+
+* Added `enable_shiny_hover()` function for optional hover events in Shiny applications:
+  - Provides `_hover` input for mouse coordinates and `_feature_hover` input for feature information
+  - Performance-conscious design: hover functionality is disabled by default and must be explicitly enabled
+  - Works with both `maplibre()` and `mapboxgl()` widgets, including compare views
+  - Configurable options: `coordinates = TRUE/FALSE` and `features = TRUE/FALSE`
+  - Example: `maplibre() |> add_circle_layer(...) |> enable_shiny_hover()`
+  - Compare views support: hover events include map side (`"before"` or `"after"`) in input names
+
+* Comprehensive legend styling system: Major enhancement to legend functionality with extensive customization options:
+  - New `legend_style()` function provides user-friendly interface for legend styling without requiring CSS knowledge
+  - Container styling: background colors/opacity, borders, border radius, padding, and customizable drop shadows
+  - Typography control: font families (with fallbacks), sizes, weights, and colors for both title and text
+  - Element borders: add borders around categorical patches/circles and continuous color bars for improved visibility
+  - Shadow customization: control shadow color, size, and opacity for professional appearance
+  - Works with custom legend IDs and maintains full backward compatibility
+  - All legend functions now consolidated under unified `map_legends` documentation
+
+* Advanced data classification system: New functions for automatic choropleth mapping similar to GIS software:
+  - `step_equal_interval()`, `step_quantile()`, and `step_jenks()` for automatic classification with equal interval, quantile, and Jenks natural breaks methods
+  - `interpolate_palette()` for continuous color scaling with multiple interpolation methods
+  - Helper functions `get_legend_labels()`, `get_legend_colors()`, and `get_breaks()` for extracting classification metadata
+  - Comprehensive number formatting support (currency, percent, scientific, compact notation) with customizable prefixes, suffixes, and decimal places
+  - Seamless integration with existing legend system and step expressions
+  - Built on `classInt` package for robust statistical classification algorithms
+
+* Enhanced MapTiler integration: Expanded support for MapTiler mapping styles:
+  - Added support for MapTiler style variants through new `variant` parameter in `maptiler_style()`
+  - Support for light/dark variants of streets style and hybrid satellite imagery
+  - Improved style switching with proper handling of MapTiler-specific features
+  - Better integration with basemap switcher functionality
+
+* Robust `set_style()` improvements: Fixed critical issues with dynamic style switching in Shiny applications:
+  - Resolved #100: `set_style()` now properly preserves user-added layers, sources, popups, tooltips, and other map elements when switching base styles
+  - Enhanced state tracking system maintains map configuration across style changes
+  - Improved compatibility with basemap switcher controls for seamless style transitions
+  - Fixed legend reversion issues when changing map styles
+  - Better handling of map configuration properties in both regular and compare environments
+
+* New `number_format()` function: Comprehensive number formatting for tooltips and map content:
+  - Support for currency, percentage, scientific notation, and compact formats
+  - Customizable decimal places, thousands separators, and currency symbols
+  - Integration with tooltip expressions for dynamic number formatting
+  - Works with both static content and expression-based tooltips
+
+* Enhanced draw control functionality with improved feature editing capabilities:
+  - Added ability to load existing features from map sources into the draw control for editing either when initializing the draw control or via `add_features_to_draw()`
+  - Fixed vertex styling to properly highlight selected vertices during editing
+  - Extended draw control support to compare views, enabling feature editing in side-by-side map comparisons
+  - Improved compatibility with both Mapbox GL JS and MapLibre GL JS
+
+* Fixed `hover_options` for vector tile sources in MapLibre (#67):
+  - Added proper source layer handling for vector tiles when using hover effects
+  - Now works correctly with PMTiles and other vector tile sources that include feature IDs
+  - Note: Vector tiles must include feature IDs for hover effects to work. GeoJSON sources automatically generate IDs.
+
+* Enhanced tooltip functionality with expression support:
+  - Tooltips can now use expressions for dynamic content generation
+  - Use `get_column()` to reference feature properties in tooltips
+  - Added `concat()` helper function for combining strings and expressions
+  - Example: `tooltip = concat("<strong>Name:</strong> ", get_column("name"), "<br>Value: ", get_column("value"))`
+  - Works with both regular tooltips and `set_tooltip()` in Shiny applications
+
+# mapgl 0.2.2
+
+* Added `mapboxgl_view()` and `maplibre_view()` functions for quick visualization of sf objects with automatic geometry detection and column-based styling (#102).
+* Added support for rain and snow effects on Mapbox GL maps with `set_rain()` and `set_snow()` functions.
+* Added `add_globe_control()` for MapLibre maps, allowing users to toggle between "mercator" and "globe" projections.
+* Fixed issue with `set_style()` in Shiny applications for both Mapbox and MapLibre maps (#99).
+* Fixed namespacing issue in `get_drawn_features()` for Shiny modules (#95).
+* Improved compare functionality with better control support and swiper color customization.
+
+# mapgl 0.2.1
+
+* Improved styling and positioning behavior of the layers control. Users can now customize the appearance of the layers control, and the layers control is collapsed by default with cleaner appearance.
+Added ability to link legends to specific layers with the new `layer_id` parameter in `add_legend()`. When a layer is toggled in the layers control, its associated legend will automatically show or hide.
+* Added support for custom legend positioning with new margin parameters (`margin_top`, `margin_right`, `margin_bottom`, `margin_left`) that allow fine-grained control over legend placement.
+* Fixed layers control toggle button state to correctly reflect the initial visibility of layers, resolving the issue with layers set to `visibility = "none"` showing as active in the control.
+* Support for the `compare()` plugin in Shiny applications, with new rendering and proxy functions for comparison apps in Mapbox and MapLibre.
+* New `mode` parameter in `compare()` allowing users to choose between `"swipe"` mode with a comparison slider, and `"sync"` mode which displays synchronized maps side-by-side.
+* Updates throughout the codebase to allow features to be used in comparison maps via Shiny proxy sessions.
+
+# mapgl 0.2.0
+
+* A new "story map" feature allows users to build interactive story maps.  [View the story mapping vignette](https://walker-data.com/mapgl/articles/story-maps.html) for more information.
+* Various bug fixes and performance improvements; [visit the package GitHub page for more details](https://github.com/walkerke/mapgl).
+
+# mapgl 0.1.4
+
+* `add_image()` allows you to add your own image to the map's sprite for use as an icon / symbol layer
+* `add_geolocate_control()` adds a Geolocate control to the map
+* `add_globe_minimap()` adds a mini globe overview map that tracks how your map moves around the globe
+* Support for multiple legends with the argument `add = TRUE`
+* A `move_layer()` function that gives you more fine-grained control over layer ordering in a Shiny session
+* Various bug fixes and performance improvements.
+
+
+# mapgl 0.1.3
+
+* Geocoding support for Mapbox and MapLibre maps added with `add_geocoder_control()`
+* Freehand draw support in the draw toolbar with `add_draw_control(freehand = TRUE)`
+* A "reset view" control available with `add_reset_control()`
+* Circle clustering is streamlined with the `cluster_options()` function, to be used with the `cluster_options` argument in `add_circle_layer()` and `add_symbol_layer()`
+* Various bug fixes and performance improvements.
+
+# mapgl 0.1.0
+
+* Initial release.
