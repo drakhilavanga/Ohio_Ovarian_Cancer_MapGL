@@ -1,0 +1,11 @@
+
+services:
+  - type: web
+    name: ohio-ovarian-cancer-atlas
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    autoDeploy: false
+
