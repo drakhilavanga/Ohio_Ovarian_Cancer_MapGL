@@ -1,0 +1,89 @@
+county_raw,mortality_rate_raw,average_annual_deaths_raw,mortality_lower_ci_raw,mortality_upper_ci_raw,county,mortality_rate,average_annual_deaths,mortality_lower_ci,mortality_upper_ci,mortality_suppressed
+Adams County,*,3 or fewer,*,*,Adams,NA,3,NA,NA,TRUE
+Allen County,5.8,4,3.5,9.1,Allen,5.8,4,3.5,9.1,FALSE
+Ashland County,*,3 or fewer,*,*,Ashland,NA,3,NA,NA,TRUE
+Ashtabula County,6.7,5,4.2,10.3,Ashtabula,6.7,5,4.2,10.3,FALSE
+Athens County,*,3 or fewer,*,*,Athens,NA,3,NA,NA,TRUE
+Auglaize County,*,3 or fewer,*,*,Auglaize,NA,3,NA,NA,TRUE
+Belmont County,7.6,4,4.4,12.7,Belmont,7.6,4,4.4,12.7,FALSE
+Brown County,*,3 or fewer,*,*,Brown,NA,3,NA,NA,TRUE
+Butler County,5.9,15,4.6,7.4,Butler,5.9,15,4.6,7.4,FALSE
+Carroll County,*,3 or fewer,*,*,Carroll,NA,3,NA,NA,TRUE
+Champaign County,*,3 or fewer,*,*,Champaign,NA,3,NA,NA,TRUE
+Clark County,4.6,5,3,6.9,Clark,4.6,5,3,6.9,FALSE
+Clermont County,6.9,10,5.1,9.2,Clermont,6.9,10,5.1,9.2,FALSE
+Clinton County,*,3 or fewer,*,*,Clinton,NA,3,NA,NA,TRUE
+Columbiana County,6,5,3.7,9.4,Columbiana,6,5,3.7,9.4,FALSE
+Coshocton County,*,3 or fewer,*,*,Coshocton,NA,3,NA,NA,TRUE
+Crawford County,*,3 or fewer,*,*,Crawford,NA,3,NA,NA,TRUE
+Cuyahoga County,5.9,58,5.2,6.7,Cuyahoga,5.9,58,5.2,6.7,FALSE
+Darke County,*,3 or fewer,*,*,Darke,NA,3,NA,NA,TRUE
+Defiance County,*,3 or fewer,*,*,Defiance,NA,3,NA,NA,TRUE
+Delaware County,4.3,6,2.8,6.2,Delaware,4.3,6,2.8,6.2,FALSE
+Erie County,6.3,4,3.8,10.1,Erie,6.3,4,3.8,10.1,FALSE
+Fairfield County,4.9,5,3.2,7.4,Fairfield,4.9,5,3.2,7.4,FALSE
+Fayette County,*,3 or fewer,*,*,Fayette,NA,3,NA,NA,TRUE
+Franklin County,5.4,40,4.7,6.2,Franklin,5.4,40,4.7,6.2,FALSE
+Fulton County,*,3 or fewer,*,*,Fulton,NA,3,NA,NA,TRUE
+Gallia County,*,3 or fewer,*,*,Gallia,NA,3,NA,NA,TRUE
+Geauga County,5.8,5,3.7,9,Geauga,5.8,5,3.7,9,FALSE
+Greene County,6.5,8,4.6,9.1,Greene,6.5,8,4.6,9.1,FALSE
+Guernsey County,*,3 or fewer,*,*,Guernsey,NA,3,NA,NA,TRUE
+Hamilton County,5.2,29,4.3,6.1,Hamilton,5.2,29,4.3,6.1,FALSE
+Hancock County,*,3 or fewer,*,*,Hancock,NA,3,NA,NA,TRUE
+Hardin County,*,3 or fewer,*,*,Hardin,NA,3,NA,NA,TRUE
+Harrison County,*,3 or fewer,*,*,Harrison,NA,3,NA,NA,TRUE
+Henry County,*,3 or fewer,*,*,Henry,NA,3,NA,NA,TRUE
+Highland County,*,3 or fewer,*,*,Highland,NA,3,NA,NA,TRUE
+Hocking County,*,3 or fewer,*,*,Hocking,NA,3,NA,NA,TRUE
+Holmes County,*,3 or fewer,*,*,Holmes,NA,3,NA,NA,TRUE
+Huron County,*,3 or fewer,*,*,Huron,NA,3,NA,NA,TRUE
+Jackson County,*,3 or fewer,*,*,Jackson,NA,3,NA,NA,TRUE
+Jefferson County,6.7,4,4,11.1,Jefferson,6.7,4,4,11.1,FALSE
+Knox County,*,3 or fewer,*,*,Knox,NA,3,NA,NA,TRUE
+Lake County,6.7,13,5.1,8.7,Lake,6.7,13,5.1,8.7,FALSE
+Lawrence County,*,3 or fewer,*,*,Lawrence,NA,3,NA,NA,TRUE
+Licking County,6.7,9,4.8,9.2,Licking,6.7,9,4.8,9.2,FALSE
+Logan County,*,3 or fewer,*,*,Logan,NA,3,NA,NA,TRUE
+Lorain County,5.5,13,4.2,7.1,Lorain,5.5,13,4.2,7.1,FALSE
+Lucas County,7.1,20,5.8,8.7,Lucas,7.1,20,5.8,8.7,FALSE
+Madison County,*,3 or fewer,*,*,Madison,NA,3,NA,NA,TRUE
+Mahoning County,6.2,12,4.6,8.1,Mahoning,6.2,12,4.6,8.1,FALSE
+Marion County,*,3 or fewer,*,*,Marion,NA,3,NA,NA,TRUE
+Medina County,5.2,7,3.6,7.3,Medina,5.2,7,3.6,7.3,FALSE
+Meigs County,*,3 or fewer,*,*,Meigs,NA,3,NA,NA,TRUE
+Mercer County,*,3 or fewer,*,*,Mercer,NA,3,NA,NA,TRUE
+Miami County,5.3,4,3.3,8.4,Miami,5.3,4,3.3,8.4,FALSE
+Monroe County,*,3 or fewer,*,*,Monroe,NA,3,NA,NA,TRUE
+Montgomery County,5.3,21,4.3,6.4,Montgomery,5.3,21,4.3,6.4,FALSE
+Morgan County,*,3 or fewer,*,*,Morgan,NA,3,NA,NA,TRUE
+Morrow County,*,3 or fewer,*,*,Morrow,NA,3,NA,NA,TRUE
+Muskingum County,7.2,5,4.5,11.1,Muskingum,7.2,5,4.5,11.1,FALSE
+Noble County,*,3 or fewer,*,*,Noble,NA,3,NA,NA,TRUE
+Ottawa County,*,3 or fewer,*,*,Ottawa,NA,3,NA,NA,TRUE
+Paulding County,*,3 or fewer,*,*,Paulding,NA,3,NA,NA,TRUE
+Perry County,*,3 or fewer,*,*,Perry,NA,3,NA,NA,TRUE
+Pickaway County,*,3 or fewer,*,*,Pickaway,NA,3,NA,NA,TRUE
+Pike County,*,3 or fewer,*,*,Pike,NA,3,NA,NA,TRUE
+Portage County,7.1,8,5,9.8,Portage,7.1,8,5,9.8,FALSE
+Preble County,*,3 or fewer,*,*,Preble,NA,3,NA,NA,TRUE
+Putnam County,*,3 or fewer,*,*,Putnam,NA,3,NA,NA,TRUE
+Richland County,4.6,5,2.8,7.2,Richland,4.6,5,2.8,7.2,FALSE
+Ross County,*,3 or fewer,*,*,Ross,NA,3,NA,NA,TRUE
+Sandusky County,*,3 or fewer,*,*,Sandusky,NA,3,NA,NA,TRUE
+Scioto County,*,3 or fewer,*,*,Scioto,NA,3,NA,NA,TRUE
+Seneca County,*,3 or fewer,*,*,Seneca,NA,3,NA,NA,TRUE
+Shelby County,*,3 or fewer,*,*,Shelby,NA,3,NA,NA,TRUE
+Stark County,7,21,5.7,8.6,Stark,7,21,5.7,8.6,FALSE
+Summit County,4.9,21,4,6,Summit,4.9,21,4,6,FALSE
+Trumbull County,5.7,10,4.2,7.7,Trumbull,5.7,10,4.2,7.7,FALSE
+Tuscarawas County,6.6,4,4,10.4,Tuscarawas,6.6,4,4,10.4,FALSE
+Union County,*,3 or fewer,*,*,Union,NA,3,NA,NA,TRUE
+Van Wert County,*,3 or fewer,*,*,Van Wert,NA,3,NA,NA,TRUE
+Vinton County,*,3 or fewer,*,*,Vinton,NA,3,NA,NA,TRUE
+Warren County,6,9,4.3,8.1,Warren,6,9,4.3,8.1,FALSE
+Washington County,6,3,3.4,10.3,Washington,6,3,3.4,10.3,FALSE
+Wayne County,6.9,6,4.5,10.2,Wayne,6.9,6,4.5,10.2,FALSE
+Williams County,*,3 or fewer,*,*,Williams,NA,3,NA,NA,TRUE
+Wood County,6.3,6,4.2,9.3,Wood,6.3,6,4.2,9.3,FALSE
+Wyandot County,*,3 or fewer,*,*,Wyandot,NA,3,NA,NA,TRUE
