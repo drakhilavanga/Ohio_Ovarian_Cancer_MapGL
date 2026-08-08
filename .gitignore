@@ -1,0 +1,14 @@
+.RData
+.Rhistory
+.Ruserdata
+.Rproj.user/
+.Renviron
+Thumbs.db
+.DS_Store
+*.zip
+Ohio_Ovarian_Cancer_Modular_App/
+Ohio_Ovarian_Cancer_Globe_App/
+Ohio_Ovarian_Cancer_Dashboard_App/
+output/
+
+data/raw/CDC_PLACES_County_Data.csv
