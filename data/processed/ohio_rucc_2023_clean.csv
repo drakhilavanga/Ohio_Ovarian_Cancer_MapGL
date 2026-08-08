@@ -1,0 +1,89 @@
+fips,state,county,population_2020,rucc_2023,rucc_description,metro_status,rurality_3_level,rurality_ordinal
+39001,OH,Adams,27477,8,"Nonmetro - Urban population of fewer than 5,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39003,OH,Allen,102206,3,"Metro - Counties in metro areas of fewer than 250,000 population",Metropolitan,Metropolitan,1
+39005,OH,Ashland,52447,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39007,OH,Ashtabula,97574,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39009,OH,Athens,62431,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39011,OH,Auglaize,46422,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39013,OH,Belmont,66497,3,"Metro - Counties in metro areas of fewer than 250,000 population",Metropolitan,Metropolitan,1
+39015,OH,Brown,43676,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39017,OH,Butler,390357,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39019,OH,Carroll,26721,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39021,OH,Champaign,38714,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39023,OH,Clark,136001,3,"Metro - Counties in metro areas of fewer than 250,000 population",Metropolitan,Metropolitan,1
+39025,OH,Clermont,208601,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39027,OH,Clinton,42018,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39029,OH,Columbiana,101877,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39031,OH,Coshocton,36612,7,"Nonmetro - Urban population of 5,000 to 20,000, not adjacent to a metro area",Nonmetropolitan,Nonmetropolitan nonadjacent,3
+39033,OH,Crawford,42025,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39035,OH,Cuyahoga,1264817,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39037,OH,Darke,51881,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39039,OH,Defiance,38286,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39041,OH,Delaware,214124,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39043,OH,Erie,75622,3,"Metro - Counties in metro areas of fewer than 250,000 population",Metropolitan,Metropolitan,1
+39045,OH,Fairfield,158921,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39047,OH,Fayette,28951,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39049,OH,Franklin,1323807,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39051,OH,Fulton,42713,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39053,OH,Gallia,29220,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39055,OH,Geauga,95397,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39057,OH,Greene,167966,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39059,OH,Guernsey,38438,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39061,OH,Hamilton,830639,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39063,OH,Hancock,74920,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39065,OH,Hardin,30696,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39067,OH,Harrison,14483,8,"Nonmetro - Urban population of fewer than 5,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39069,OH,Henry,27662,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39071,OH,Highland,43317,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39073,OH,Hocking,28050,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39075,OH,Holmes,44223,9,"Nonmetro - Urban population of fewer than 5,000, not adjacent to a metro area",Nonmetropolitan,Nonmetropolitan nonadjacent,3
+39077,OH,Huron,58565,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39079,OH,Jackson,32653,7,"Nonmetro - Urban population of 5,000 to 20,000, not adjacent to a metro area",Nonmetropolitan,Nonmetropolitan nonadjacent,3
+39081,OH,Jefferson,65249,3,"Metro - Counties in metro areas of fewer than 250,000 population",Metropolitan,Metropolitan,1
+39083,OH,Knox,62721,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39085,OH,Lake,232603,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39087,OH,Lawrence,58240,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39089,OH,Licking,178519,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39091,OH,Logan,46150,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39093,OH,Lorain,312964,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39095,OH,Lucas,431279,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39097,OH,Madison,43824,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39099,OH,Mahoning,228614,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39101,OH,Marion,65359,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39103,OH,Medina,182470,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39105,OH,Meigs,22210,8,"Nonmetro - Urban population of fewer than 5,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39107,OH,Mercer,42528,7,"Nonmetro - Urban population of 5,000 to 20,000, not adjacent to a metro area",Nonmetropolitan,Nonmetropolitan nonadjacent,3
+39109,OH,Miami,108774,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39111,OH,Monroe,13385,8,"Nonmetro - Urban population of fewer than 5,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39113,OH,Montgomery,537309,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39115,OH,Morgan,13802,8,"Nonmetro - Urban population of fewer than 5,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39117,OH,Morrow,34950,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39119,OH,Muskingum,86410,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39121,OH,Noble,14115,9,"Nonmetro - Urban population of fewer than 5,000, not adjacent to a metro area",Nonmetropolitan,Nonmetropolitan nonadjacent,3
+39123,OH,Ottawa,40364,3,"Metro - Counties in metro areas of fewer than 250,000 population",Metropolitan,Metropolitan,1
+39125,OH,Paulding,18806,8,"Nonmetro - Urban population of fewer than 5,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39127,OH,Perry,35408,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39129,OH,Pickaway,58539,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39131,OH,Pike,27088,9,"Nonmetro - Urban population of fewer than 5,000, not adjacent to a metro area",Nonmetropolitan,Nonmetropolitan nonadjacent,3
+39133,OH,Portage,161791,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39135,OH,Preble,40999,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39137,OH,Putnam,34451,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39139,OH,Richland,124936,3,"Metro - Counties in metro areas of fewer than 250,000 population",Metropolitan,Metropolitan,1
+39141,OH,Ross,77093,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39143,OH,Sandusky,58896,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39145,OH,Scioto,74008,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39147,OH,Seneca,55069,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39149,OH,Shelby,48230,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39151,OH,Stark,374853,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39153,OH,Summit,540428,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39155,OH,Trumbull,201977,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39157,OH,Tuscarawas,93263,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39159,OH,Union,62784,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39161,OH,Van Wert,28931,6,"Nonmetro - Urban population of 5,000 to 20,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39163,OH,Vinton,12800,8,"Nonmetro - Urban population of fewer than 5,000, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39165,OH,Warren,242337,1,Metro - Counties in metro areas of 1 million population or more,Metropolitan,Metropolitan,1
+39167,OH,Washington,59771,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39169,OH,Wayne,116894,4,"Nonmetro - Urban population of 20,000 or more, adjacent to a metro area",Nonmetropolitan,Nonmetropolitan adjacent to metro,2
+39171,OH,Williams,37102,7,"Nonmetro - Urban population of 5,000 to 20,000, not adjacent to a metro area",Nonmetropolitan,Nonmetropolitan nonadjacent,3
+39173,OH,Wood,132248,2,"Metro - Counties in metro areas of 250,000 to 1 million population",Metropolitan,Metropolitan,1
+39175,OH,Wyandot,21900,7,"Nonmetro - Urban population of 5,000 to 20,000, not adjacent to a metro area",Nonmetropolitan,Nonmetropolitan nonadjacent,3
