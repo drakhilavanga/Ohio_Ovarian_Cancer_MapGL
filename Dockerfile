@@ -33,20 +33,19 @@ RUN R -e "install.packages(c(
     \"stringr\",
     \"janitor\",
     \"htmltools\",
-    \"base64enc\",
     \"geojsonsf\",
     \"classInt\",
     \"viridisLite\",
     \"png\",
     \"jsonlite\",
     \"httpuv\"
-  ), repos=\"https://cloud.r-project.org\")"
+), repos=\"https://cloud.r-project.org\")"
 
-WORKDIR /srv/atlas
+WORKDIR /app
 
-COPY app/ /srv/atlas/
+COPY app/ /app/
 
-EXPOSE 10000
+EXPOSE 7860
 
-CMD ["R", "-e", "shiny::runApp(\"/srv/atlas\", host=\"0.0.0.0\", port=as.numeric(Sys.getenv(\"PORT\", \"10000\")), launch.browser=FALSE)"]
+CMD ["R", "-e", "shiny::runApp(\"/app\", host=\"0.0.0.0\", port=7860, launch.browser=FALSE)"]
 
