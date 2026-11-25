@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libtiff-dev \
     libjpeg-dev \
     pkg-config \
+    cmake \
     make \
     g++ \
     && rm -rf /var/lib/apt/lists/*
